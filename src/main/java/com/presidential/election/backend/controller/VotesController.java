@@ -7,6 +7,8 @@ import com.presidential.election.backend.model.entity.Candidacy;
 import com.presidential.election.backend.model.entity.User;
 import com.presidential.election.backend.model.entity.Vote;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -24,6 +26,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @RestController
 @RequestMapping("/colombia")
 public class VotesController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(VotesController.class);
 
     @Autowired
     private IVoteDAO voteDao;

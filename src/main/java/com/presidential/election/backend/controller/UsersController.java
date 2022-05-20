@@ -4,6 +4,8 @@ import com.presidential.election.backend.model.dao.IUserDAO;
 import com.presidential.election.backend.model.entity.User;
 import com.presidential.election.frontend.dto.UserDTO;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,8 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/colombia")
 public class UsersController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(UsersController.class);
 
     @Autowired
     private IUserDAO userDao;

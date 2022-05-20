@@ -1,4 +1,4 @@
-CREATE DATABASE `col`
+CREATE DATABASE `col`;
 
 CREATE TABLE `users` (
                          `US_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -9,7 +9,7 @@ CREATE TABLE `users` (
                          `US_DOCUMENT_NUMBER` int(11) NOT NULL,
                          PRIMARY KEY (`US_ID`),
                          UNIQUE KEY `User_already_exists` (`US_DOCUMENT_NUMBER`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 
 CREATE TABLE `candidatures` (
                                 `CA_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -19,7 +19,7 @@ CREATE TABLE `candidatures` (
                                 PRIMARY KEY (`CA_ID`),
                                 UNIQUE KEY `candidatures_un` (`US_ID`),
                                 CONSTRAINT `CANDIDATURES_FK` FOREIGN KEY (`US_ID`) REFERENCES `users` (`US_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 
 CREATE TABLE `votes` (
                          `VO_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -31,4 +31,4 @@ CREATE TABLE `votes` (
                          KEY `VOTES_FK_1` (`CA_ID`),
                          CONSTRAINT `VOTES_FK` FOREIGN KEY (`US_ID`) REFERENCES `users` (`US_ID`),
                          CONSTRAINT `VOTES_FK_1` FOREIGN KEY (`CA_ID`) REFERENCES `candidatures` (`CA_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
